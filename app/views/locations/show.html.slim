@@ -1,0 +1,54 @@
+.container-fluid
+  - if @location.empty?
+    h2
+      | Location not found
+  - else
+    dl
+      dt
+        | Title
+      dd
+        = @location['title']
+      dt
+        | Location Type
+      dd
+        = @location['location_type']
+      dt
+        | Lattitude/Longitude
+      dd
+        = @location['latt_long']
+      dt
+        | Time
+      dd
+        = @location['time']
+      dt
+        | Sunrise
+      dd
+        = @location['sun_rise']
+      dt
+        | Sunset
+      dd
+        = @location['sun_set']
+      dt
+        | Timezone
+      dd
+      = @location['timezone_name']
+    
+      - @location['consolidated_weather'].each do |report|
+        hr
+
+        dt
+          | Applicable Date
+        dd
+          = report['applicable_date']
+        dt
+          | Min Temp
+        dd
+          = report['min_temp']
+        dt
+          | Temp
+        dd
+          = report['the_temp']
+        dt
+          | Max Temp
+        dd
+          = report['max_temp']
