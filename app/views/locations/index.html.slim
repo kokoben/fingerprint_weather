@@ -1,12 +1,12 @@
-.container-fluid(style="margin-top: 1rem")
+.container(style="margin-top: 1rem")
   = form_tag(locations_path, method: :get, class: 'form-inline') do
     .form-row.align-items-center
       .col-auto
-        = text_field_tag :query, params[:query], class: 'form-control'
+        = text_field_tag :query, params[:query], class: 'form-control', placeholder: 'Location...'
       .col-auto
         = submit_tag 'Search...', class: 'btn btn-primary'
 
-.container-fluid(style="margin-top: 1rem")
+.container(style="margin-top: 1rem")
   - if @locations.blank?
     h3
       | Nothing to see here... :( Try search again.

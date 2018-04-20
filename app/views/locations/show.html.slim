@@ -1,4 +1,4 @@
-.container-fluid
+.container(style="margin-top: 1rem")  
   - if @location.empty?
     h2
       | Location not found
@@ -31,7 +31,7 @@
       dt
         | Timezone
       dd
-      = @location['timezone_name']
+        = @location['timezone_name']
     
       - @location['consolidated_weather'].each do |report|
         hr
