@@ -3,7 +3,7 @@
 A simple Ruby on Rails application that enables users to search locations and view weather details made available by [MetaWeather](https://www.metaweather.com).
 
 #### Live Demo
-[https://limitless-oasis-59888.herokuapp.com/]()
+<https://limitless-oasis-59888.herokuapp.com/>
 
 ### Before You Start
 
@@ -11,13 +11,13 @@ A simple Ruby on Rails application that enables users to search locations and vi
 
 ### Prerequisites
 
-- Ruby: A Ruby version manager is highly recommended for installing Ruby and required Gems. You can find more information on available Ruby managers here: [https://www.ruby-lang.org/en/documentation/installation/#managers]()
+- Ruby: A Ruby version manager is highly recommended for installing Ruby and required Gems. You can find more information on available Ruby managers here: <https://www.ruby-lang.org/en/documentation/installation/#managers>
 
 ### Objectives
 
 - Implement caching where location query responses are stored in a *SQL* database to speed-up subsequent searches (note: cache invalidation is not a requirement).
 
-- Added appropriate weather icon to location weather result. See MetaWeather API documentation for details: [https://www.metaweather.com/api/]()
+- Added appropriate weather icon to location weather result. See MetaWeather API documentation for details: <https://www.metaweather.com/api/>
     
 	**Hint**: Match `weather_state_abbr` with appropriate weather icon made available a: `https://www.metaweather.com/static/img/weather/png/64/?.png`.
 
