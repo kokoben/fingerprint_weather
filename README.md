@@ -25,7 +25,7 @@ A simple Ruby on Rails application that enables users to search locations and vi
 
 - Replace Rails view templates with React or Vue.
 
-- Implement a simple interface that allows an “admin” to review, add, or remove items from the cache.
+- Implement a simple interface that allows an “admin” to review, add, or remove locations from the cache (authentication is not required).
 
 ### Submitting the Completed Project
 
