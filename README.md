@@ -17,7 +17,7 @@ A simple Ruby on Rails application that enables users to search locations and vi
 
 - Implement caching where location query responses are stored in a *SQL* database to speed-up subsequent searches (note: cache invalidation is not a requirement).
 
-- Added appropriate weather icon to location weather result. See MetaWeather API documentation for details: <https://www.metaweather.com/api/>
+- Add an appropriate weather icon to location weather result (`show` template). See MetaWeather API documentation for details: <https://www.metaweather.com/api/>
     
 	**Hint**: Match `weather_state_abbr` with appropriate weather icon made available a: `https://www.metaweather.com/static/img/weather/png/64/?.png`.
 
