@@ -6,26 +6,36 @@ class MetaWeather
   end
 
   def search
-    response = RestClient.get('https://www.metaweather.com/api/location/search/', params: { query: params[:query] })
-    JSON.parse(response.body)
+    # check if the search has previously been made. if so, use it.
+    if Search.find_by(keywords: params[:query])
+      search = Search.find_by(keywords: params[:query])
+      response = search[:response]
+      return response
+    # otherwise, perform the search and add to database
+    else
+      searchResponse = RestClient.get('https://www.metaweather.com/api/location/search/', params: { query: params[:query] })
+      searchResponse = JSON.parse(searchResponse.body)
+      @search = Search.new(response: searchResponse, keywords: params[:query])
+      @search.save
+      return searchResponse
+    end
   rescue
     []
   end
 
   def location_data
-    # check if location has previously been searched. if so, use the sql entry
+    # check if location has previously been searched. if so, use it.
     if Location.find_by(locId: params[:id])
-      p 'found poop'
       appLocation = Location.find_by(locId: params[:id])
       response = appLocation[:response]
-      JSON.parse(response.body)
-    # otherwise, make the query and add the sql entry
+      return response
+    # otherwise, make the query and add to database
     else
-      p 'found no poop'
       queryResponse = RestClient.get("https://www.metaweather.com/api/location/#{params[:id]}")
+      queryResponse = JSON.parse(queryResponse.body)
       @location = Location.new(response: queryResponse, locId: params[:id])
       @location.save
-      JSON.parse(queryResponse.body)
+      return queryResponse
     end
   rescue
     {}
