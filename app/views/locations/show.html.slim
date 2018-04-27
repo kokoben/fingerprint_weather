@@ -1,4 +1,4 @@
-.container(style="margin-top: 1rem")  
+.container(style="margin-top: 1rem")
   - if @location.empty?
     h2
       | Location not found
@@ -32,10 +32,13 @@
         | Timezone
       dd
         = @location['timezone_name']
-    
+
       - @location['consolidated_weather'].each do |report|
         hr
-
+        = image_tag(@weatherStates[report['id']][:path])
+        br
+        = @weatherStates[report['id']][:text]
+        p
         dt
           | Applicable Date
         dd

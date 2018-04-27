@@ -11,38 +11,26 @@ class LocationsController < ApplicationController
     @location['consolidated_weather'].each do |report|
       case report['weather_state_abbr']
       when 'sn'
-        p 'adding sn'
-        @weatherStates[report['id']] =  'https://www.metaweather.com/static/img/weather/png/64/sn.png'
+        @weatherStates[report['id']] = {path: 'https://www.metaweather.com/static/img/weather/png/64/sn.png', text: 'Snow'}
       when 'sl'
-        p 'adding sl'
-        @weatherStates[report['id']] = 'https://www.metaweather.com/static/img/weather/png/64/sl.png'
+        @weatherStates[report['id']] = {path: 'https://www.metaweather.com/static/img/weather/png/64/sl.png', text: 'Sleet'}
       when 'h'
-        p 'adding h'
-        @weatherStates[report['id'] = 'https://www.metaweather.com/static/img/weather/png/64/h.png']
+        @weatherStates[report['id']] = {path: 'https://www.metaweather.com/static/img/weather/png/64/h.png', text: 'Hail' }
       when 't'
-        p 'adding t'
-        @weatherStates[report['id'] = 'https://www.metaweather.com/static/img/weather/png/64/t.png']
+        @weatherStates[report['id']] = {path: 'https://www.metaweather.com/static/img/weather/png/64/t.png', text: 'Thunderstorm'}
       when 'hr'
-        p 'adding hr'
-        @weatherStates[report['id'] = 'https://www.metaweather.com/static/img/weather/png/64/hr.png']
+        @weatherStates[report['id']] = {path: 'https://www.metaweather.com/static/img/weather/png/64/hr.png', text: 'Heavy Rain'}
       when 'lr'
-        p 'adding lr'
-        @weatherStates[report['id'] = 'https://www.metaweather.com/static/img/weather/png/64/lr.png']
+        @weatherStates[report['id']] = {path: 'https://www.metaweather.com/static/img/weather/png/64/lr.png', text: 'Light Rain'}
       when 's'
-        p 'adding s'
-        @weatherStates[report['id'] = 'https://www.metaweather.com/static/img/weather/png/64/s.png']
+        @weatherStates[report['id']] = {path: 'https://www.metaweather.com/static/img/weather/png/64/s.png', text: 'Showers'}
       when 'hc'
-        p 'adding hc'
-        @weatherStates[report['id'] = 'https://www.metaweather.com/static/img/weather/png/64/hc.png']
+        @weatherStates[report['id']] = {path: 'https://www.metaweather.com/static/img/weather/png/64/hc.png', text: 'Heavy Cloud'}
       when 'lc'
-        p 'adding lc'
-        @weatherStates[report['id'] = 'https://www.metaweather.com/static/img/weather/png/64/lc.png']
+        @weatherStates[report['id']] = {path: 'https://www.metaweather.com/static/img/weather/png/64/lc.png', text: 'Light Cloud'}
       else
-        p 'adding c'
-        @weatherStates[report['id'] = 'https://www.metaweather.com/static/img/weather/png/64/c.png']
+        @weatherStates[report['id']] = {path: 'https://www.metaweather.com/static/img/weather/png/64/c.png', text: 'Clear'}
       end
     end
-    p 'weather states: '
-    p @weatherStates
   end
 end
